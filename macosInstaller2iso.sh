@@ -19,7 +19,7 @@ echo "Create a bootable ISO from a App Store macOS installer"
 # options
 echo "press enter to use defaults"
 
-read -p "Destination Diretory [~/Desktop]: " opt1
+read -p "Destination Directory [~/Desktop]: " opt1
 
 [[ $opt1 = "" ]] && destDir="~/Desktop" || destDir=$opt1
 
