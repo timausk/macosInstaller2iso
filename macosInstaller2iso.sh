@@ -6,6 +6,14 @@
 # Mac App Store macOS installer
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Ask for the administrator password upfront.
+sudo -v &> /dev/null
+while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+done &> /dev/null &
+
 echo "Create a bootable ISO from a App Store macOS installer"
 
 # options
@@ -21,7 +29,7 @@ if [ ! -d "${destDir/#\~/$HOME}" ]; then
   exit;
 fi
 
-echo "Generate bootable image - your password may be necessary"
+echo "Generate bootable image";
 
 # create virtual USB flash drive
 hdiutil create -o /tmp/HighSierra -size 8G -layout SPUD -fs HFS+J -type SPARSE
