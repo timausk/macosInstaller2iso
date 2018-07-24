@@ -37,6 +37,11 @@ hdiutil create -o /tmp/HighSierra -size 8G -layout SPUD -fs HFS+J -type SPARSE
 # moaunt flash drive
 hdiutil attach /tmp/HighSierra.sparseimage -noverify -mountpoint /Volumes/install_build
 
+# check if installer exist in Application folder
+if [ ! -d /Applications/Install\ macOS\ High\ Sierra.app ]; then
+    echo "MacOS Installer not found in Application folder. Download Installer via App Store and try again"
+    exit;
+fi
 # put installer file into flash drive
 sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/install_build
 
