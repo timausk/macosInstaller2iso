@@ -4,7 +4,6 @@ Shell Script to create a macOS install ISO file for VirtualBox
 
 ## Create ISO
 * [Download](https://itunes.apple.com/de/app/macos-high-sierra/id1246284741) macOS HightSierra from App Store
-    * Hint: redownload Installer if downloaded before 5th of October. Apple made some changes to the previously released version, especially to the installer, which are important to get this VM running. The version of the "Install macOS High Sierra.app" has to be 13.0.66 or above.
 * Download script and run `./macosInstaller2iso.sh`
 * Follow instructions
 
@@ -34,6 +33,17 @@ you may want to change RAM, the share of CPU power the VM is allowed to use or o
     * Choose `Install macOS`
     * Agree license agreement
     * Choose the previously created virtual hard disk and click on "Install"
+    * The installation starts and after a while, the machine will reboot
+    * __(!) After the reboot, the VM will display the following error message: Boot Failed. Mac OS X__
+    * At this point, we need the VirtualBox boot manager to select the correct EFI
+    * Restart the machine either with CMD+R (hard reset) or if Installer is already running
+      by clicking on the Apple icon and choose "Restart"
+    * __Now be quick:__ While the VM restarts, press fn+F12 to get into the VirtualBox boot manager
+        * Go to Boot Maintenance Manager => Boot from File => select the PCIRoot which contains ...HD(2,GPT)... =>
+          macOS Install Data => Locked Files => Boot Files => __select boot.efi__ 
+          (_this will continue the installation_)
+    * Click through the steps of the wizard
+    * DONE
 
 (!) **If the installation is complete, shut the VM down and create a snapshot.
 It's always nice to have a backup of a fresh installation**
