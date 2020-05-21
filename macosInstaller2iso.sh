@@ -21,7 +21,7 @@ echo "press enter to use defaults"
 
 read -p "Destination Directory [~/Desktop]: " opt1
 
-[[ $opt1 = "" ]] && destDir="~/Desktop" || destDir=$opt1
+[[ $opt1 = "" ]] && destDir="$HOME/Desktop" || destDir=$opt1
 
 # check if path exist (expand if tilde is used in user input)
 if [ ! -d "${destDir/#\~/$HOME}" ]; then
