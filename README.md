@@ -3,9 +3,10 @@
 Shell Script to create a macOS install ISO file for VirtualBox
 
 ## Create ISO
-* [Download](https://itunes.apple.com/de/app/macos-high-sierra/id1246284741) macOS HightSierra from App Store
+* [Download](https://apps.apple.com/us/app/macos-ventura/id1638787999) macOS from App Store
 * Download script and run `./macosInstaller2iso.sh`
 * Follow instructions
+* :information_source: Links to Apple SUS and different OS Versions can be found @ [mrmacintosh.com](https://mrmacintosh.com/how-to-download-macos-catalina-mojave-or-high-sierra-full-installers/)
 
 ## Create VM
 _The following settings work well for my machines and use cases. Depending on your hardware,
@@ -49,6 +50,11 @@ you may want to change RAM, the share of CPU power the VM is allowed to use or o
 It's always nice to have a backup of a fresh installation**
 
 ## Troubleshooting
+###
+* **MacOS Installer not found in Application folder.**
+    * Check if correct macOS version is available in Application folder
+    * Downloaded macOS Versions from App Store should be automatically mounted in the Application folder
+    * Downloaded installer from Apple SUS, have to run in advance
 ### Installation
 * **VirtualBox disk is not shown in Disk Utilities**
     * Click on "View" in the top left corner of the Disk Utility window and choose "Show All Devices"

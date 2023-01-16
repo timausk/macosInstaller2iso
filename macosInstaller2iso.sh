@@ -17,7 +17,7 @@ done &> /dev/null &
 
 osVersion=false
 PS3="Choose a macOS Version (Q Quit) "
-options=("Monterey" "High Sierra")
+options=("Ventura" "Monterey" "High Sierra")
 select opt in "${options[@]}"; do
     case "$REPLY" in
     1) osVersion="${opt}"; break;;
@@ -34,7 +34,7 @@ fi
 echo "You choose $osVersion"
 
 case $osVersion in
-  "Monterey")
+  "Ventura"|"Monterey")
     flashDriveSize=14G
     ;;
 
